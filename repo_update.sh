@@ -56,6 +56,7 @@ apply_gerrit_cl_commit refs/changes/97/1112097/2 7de7c4cd0c8f800caa8c5f240eabd39
 
 #ART: Support kryo385 CPU.
 #Change-Id: Iede5830093497abe753a34df3bc4913468be39d0
+git revert e6b96a212905c5e97ad994cc949525abad9969a8 --no-edit
 apply_gerrit_cl_commit refs/changes/29/837429/3 b06fbf7dfdb360885a1791b61c8943200c77e4e6
 popd
 
@@ -71,6 +72,7 @@ apply_gerrit_cl_commit refs/changes/49/839749/3 6201b9eb5a91db2cb389838734e004a8
 
 # Enable armv8-2a supporting on 2nd arch. variant
 # Change-Id: I1cd64ab0ad9b253ec3d109ebd1dbc7882011ce77
+git revert adfc72b3f634110ef1c79c93a2746a2f42706697 --no-edit
 apply_gerrit_cl_commit refs/changes/21/824721/1 ead02eb87d6424b39cad9596cde53f643edadb51
 
 # Support kryo385 CPU.
@@ -125,37 +127,37 @@ LINK=$HTTP && LINK+="://android.googlesource.com/platform/hardware/qcom/sdm845/g
 apply_gerrit_cl_commit refs/changes/39/804439/1 c1bdb439aaf7ecddd9f499dce5c7b56ea458cce4
 popd
 
-pushd $ANDROOT/hardware/qcom/audio
-LINK=$HTTP && LINK+="://android.googlesource.com/platform/hardware/qcom/audio"
+# pushd $ANDROOT/hardware/qcom/audio # Not existing in the minimal twrp environment
+# LINK=$HTTP && LINK+="://android.googlesource.com/platform/hardware/qcom/audio"
 # hal: Correct mixer control name for 3.5mm headphone
 # Change-Id: I749609aabfed53e8adb3575695c248bf9a674874
-git revert --no-edit 39a2b8a03c0a8a44940ac732f636d9cc1959eff2
+# git revert --no-edit 39a2b8a03c0a8a44940ac732f636d9cc1959eff2
 
 #Add msm8976 tasha sound card detection to msm8916 HAL
 #Change-Id:  Idc5ab339bb9c898205986ba0b4c7cc91febf19de
-apply_gerrit_cl_commit refs/changes/99/1112099/2 5d6e73eca6f83ce5e7375aa1bd6ed61143d30978
+# apply_gerrit_cl_commit refs/changes/99/1112099/2 5d6e73eca6f83ce5e7375aa1bd6ed61143d30978
 
 #hal: enable audio hal on sdm660
 #Change-Id: I7bb807788e457f7ec6ce5124dfb1d88dc96d8127
-apply_gerrit_cl_commit refs/changes/00/1112100/2 eeecf8a399080598e5290d3356b0ad557bd0ccbd
+# apply_gerrit_cl_commit refs/changes/00/1112100/2 eeecf8a399080598e5290d3356b0ad557bd0ccbd
 
 # hal: msm8916: Fix for vndk compilation errors
 # Change-Id: Iffd8a3c00a2a1ad063e10c0ebf3ce9e88e3edea0
-apply_gerrit_cl_commit refs/changes/14/777714/1 065ec9c4857fdd092d689a0526e0caeaaa6b1d72
-popd
+# apply_gerrit_cl_commit refs/changes/14/777714/1 065ec9c4857fdd092d689a0526e0caeaaa6b1d72
+# popd
 
-pushd $ANDROOT/hardware/qcom/media
-LINK=$HTTP && LINK+="://android.googlesource.com/platform/hardware/qcom/media"
+# pushd $ANDROOT/hardware/qcom/media # Not existing in the minimal twrp environment
+# LINK=$HTTP && LINK+="://android.googlesource.com/platform/hardware/qcom/media"
 # msm8998: vdec: Add missing ifdefs for UBWC on DPB buffer decision
 # Change-Id: I76131db5272b97016679c5bc0bf6ae099167cd03
-apply_gerrit_cl_commit refs/changes/39/728339/1 b641243647a7cd3f382dd2be43b74f9d6b7f9310
+# apply_gerrit_cl_commit refs/changes/39/728339/1 b641243647a7cd3f382dd2be43b74f9d6b7f9310
 # msm8998: mm-video-v4l2: enable compilation for both 3.18 kernel and 4.9 kernel
 # Change-Id: If1eb2575dd80a1e6684c84e573baf78ae698bb20
-apply_gerrit_cl_commit refs/changes/54/813054/1 01062d8acaae88b141893d69358d6c13e3495377
+# apply_gerrit_cl_commit refs/changes/54/813054/1 01062d8acaae88b141893d69358d6c13e3495377
 # msm8998: mm-video-v4l2: Renaming the AU-Delimiter params/extens
 # Change-Id: I3feccfbb06e4e237a601a355ab2f2573a165ed3b
-apply_gerrit_cl_commit refs/changes/55/813055/1 cb97584647999d7ea8df858f2c3f4bf04f408f34
-popd
+# apply_gerrit_cl_commit refs/changes/55/813055/1 cb97584647999d7ea8df858f2c3f4bf04f408f34
+# popd
 
 pushd $ANDROOT/hardware/qcom/media/sdm845
 LINK=$HTTP && LINK+="://android.googlesource.com/platform/hardware/qcom/sdm845/media"
@@ -167,31 +169,31 @@ apply_gerrit_cl_commit refs/changes/80/832780/1 3a2fe3ec7974f9f1e9772d0009dc4df0
 apply_gerrit_cl_commit refs/changes/84/832784/1 07a63defb34cd0a18849d4488ef11a8793e6cf3b
 popd
 
-pushd $ANDROOT/hardware/qcom/display
-LINK=$HTTP && LINK+="://android.googlesource.com/platform/hardware/qcom/display"
+# pushd $ANDROOT/hardware/qcom/display # Not existing in the minimal twrp environment
+# LINK=$HTTP && LINK+="://android.googlesource.com/platform/hardware/qcom/display"
 # sdm: core: Update the mixer, framebuffer and display properly
 # Change-Id: I8e1324787e35f2c675f1c8580901fb3fadc8f3c9
-apply_gerrit_cl_commit refs/changes/09/729209/2 c62b4c1d5aeb39562d2241238082a73f39a7ea1b
+# apply_gerrit_cl_commit refs/changes/09/729209/2 c62b4c1d5aeb39562d2241238082a73f39a7ea1b
 # hwc2: Do not treat color mode errors as fatal at init
 # Change-Id: I56926f320eb7719a22475793322d19244dd5d4d5
-apply_gerrit_cl_commit refs/changes/10/729210/1 ae41c6d8047767f2cd84f6d4e7ef36c653bbb8f5
+# apply_gerrit_cl_commit refs/changes/10/729210/1 ae41c6d8047767f2cd84f6d4e7ef36c653bbb8f5
 # msm8998: gralloc1: disable UBWC if video encoder client has no support
 # Change-Id: I1ff2489b0ce8fe36a801881b848873e591077402
-apply_gerrit_cl_commit refs/changes/11/729211/1 8dcf282bcec842ae633f43fc6dd1ecb397986d5c
+# apply_gerrit_cl_commit refs/changes/11/729211/1 8dcf282bcec842ae633f43fc6dd1ecb397986d5c
 # color_manager: Update display color api libname
 # Change-Id: I3626975ddff8458c641dc60b3632581512f91b94
-apply_gerrit_cl_commit refs/changes/12/729212/1 977eaf6520b189100df7729644a062a2fd9a6bc4
+# apply_gerrit_cl_commit refs/changes/12/729212/1 977eaf6520b189100df7729644a062a2fd9a6bc4
 # msm8998: sdm: hwc2: Added property to disable skipping client color transform.
 # Change-Id: I5e2508b2de391007f93064fe5bd506dd62050fbc
-apply_gerrit_cl_commit refs/changes/13/729213/1 7f8016eb2f5b090847e70b69c08cae555add6e7f
-popd
+# apply_gerrit_cl_commit refs/changes/13/729213/1 7f8016eb2f5b090847e70b69c08cae555add6e7f
+# popd
 
-pushd $ANDROOT/hardware/qcom/bt
-LINK=$HTTP && LINK+="://android.googlesource.com/platform/hardware/qcom/bt"
+# pushd $ANDROOT/hardware/qcom/bt # Not existing in the minimal twrp environment
+# LINK=$HTTP && LINK+="://android.googlesource.com/platform/hardware/qcom/bt"
 # bt: use TARGET_BOARD_AUTO to override qcom hals
 # Change-Id: I28898df1e8855347129039b5cb0d43975d3a5415
-apply_gerrit_cl_commit refs/changes/69/728569/1 e0e30f0d46ef2ff5bcb707eaf47a596cb57b65af
-popd
+# apply_gerrit_cl_commit refs/changes/69/728569/1 e0e30f0d46ef2ff5bcb707eaf47a596cb57b65af
+# popd
 
 pushd $ANDROOT/hardware/qcom/bootctrl
 LINK=$HTTP && LINK+="://android.googlesource.com/platform/hardware/qcom/bootctrl"
@@ -206,21 +208,21 @@ git revert --no-edit a8e07aecb24898d7d2b49cb785b0c193a4b134b4
 apply_gerrit_cl_commit refs/changes/70/728570/2 0ae34c3a19fb0a1a0bd9775199692d550af4b8f5
 popd
 
-pushd $ANDROOT/hardware/nxp/nfc
-LINK=$HTTP && LINK+="://android.googlesource.com/platform/hardware/nxp/nfc"
+#pushd $ANDROOT/hardware/nxp/nfc
+#LINK=$HTTP && LINK+="://android.googlesource.com/platform/hardware/nxp/nfc"
 # hardware: nxp: Restore pn548 support
 # Change-Id: Iafb0d31626d0a8b9faf22f5307ac8b0a5a9ded37
-apply_gerrit_cl_commit refs/changes/61/744361/2 e3f2e87aaf9a24d61e3e3e350854d6da360696d8
+#apply_gerrit_cl_commit refs/changes/61/744361/2 e3f2e87aaf9a24d61e3e3e350854d6da360696d8 # Already in OmniROM 9.0
 # hardware: nxp: Restore pn547 support
 # Change-Id: I498367f676f8c8d7fc13e849509d0d8a05ec89a8
-apply_gerrit_cl_commit refs/changes/62/744362/5 6629cfdaf4c41f09b69874e5d0c40552c197a517
-popd
+#apply_gerrit_cl_commit refs/changes/62/744362/5 6629cfdaf4c41f09b69874e5d0c40552c197a517 # Already in OmniROM 9.0
+#popd
 
 pushd $ANDROOT/frameworks/base
 LINK=$HTTP && LINK+="://android.googlesource.com/platform/frameworks/base"
 # Add camera key long press handling
 # Change-Id: I9e68032eee221c20608f0d2c491c2b308350f7f6
-apply_gerrit_cl_commit refs/changes/15/727815/1 7913f55462b61c17b0700cf57d3f1a375bb4c565
+# apply_gerrit_cl_commit refs/changes/15/727815/1 7913f55462b61c17b0700cf57d3f1a375bb4c565 # Not needed for TWRP
 # fwb: Add check for odm version
 # Change-Id: Ifab6ca5c2f97840bb4192226f191e624267edb32
 apply_gerrit_cl_commit refs/changes/75/728575/1 d6f654b013b00fa55b5c50f3f599df50847811bb
@@ -230,6 +232,61 @@ apply_gerrit_cl_commit refs/changes/05/728605/1 b6f563436ca1b1496bf6026453e5b805
 # SystemUI: Implement burn-in protection for status-bar/nav-bar items
 # Change-Id: I828dbd4029b4d3b1f2c86b682a03642e3f9aeeb9
 apply_gerrit_cl_commit refs/changes/40/824340/1 6272c6244d2b007eb6ad08fb682d77612555d1ac
+popd
+
+######## OMNIROM CHANGES ########
+pushd $ANDROOT/vendor/omni
+# Revert "Revert "roomservice: Do not overwrite existing devices""
+git revert 380d19cea2857d5901d7e7163f65ccc66d7bbad7 --no-edit
+# Revert "Revert Revert "roomservice: Do not overwrite existing repositories""
+git revert 718f4c2fd6890f5eaa2d4972b1c3f3f582b5da47 --no-edit
+popd
+
+pushd $ANDROOT/vendor/qcom/opensource/interfaces
+# Revert "bluetooth_audio: add Android.bp"
+git revert e55d81d632fb3053a7edaef35a907cf745638faf --no-edit
+popd
+
+# To fix services not starting because of missing selinux service_contexts
+pushd $ANDROOT/system/sepolicy
+# sepolicy: include service and hwservice contexts in recovery policy
+# Change-Id: I4102f1b495649f0dd10de0939aa5f280961f2a4d
+git fetch "https://gerrit.omnirom.org/android_system_sepolicy" refs/changes/19/33719/4 && git cherry-pick FETCH_HEAD
+popd
+
+# To fix services not starting because of missing selinux service_contexts
+pushd $ANDROOT/build/make
+# core: Makefile: add service and hwservice contexts to recovery_sepolicy
+# Change-Id: Id4867fe6fff7571df555236bafe20ccb98be53e4
+git fetch "https://gerrit.omnirom.org/android_build" refs/changes/20/33720/3 && git cherry-pick FETCH_HEAD
+popd
+
+######## TWRP CHANGES ########
+# Make it possible to overwrite  the security patch level and android version by the ones from system partition
+. build/envsetup.sh
+repopick -g https://gerrit.twrp.me -t sar-fixes
+pushd $ANDROOT/bootable/recovery
+# Missing in topic libresetprop
+git fetch "https://gerrit.twrp.me/android_bootable_recovery" refs/changes/23/1723/15 && git cherry-pick FETCH_HEAD
+popd
+repopick -g https://gerrit.twrp.me -t libresetprop
+# Adding personal commits which need to get upstreamed in TWRP-10.0
+pushd $ANDROOT/bootable/recovery
+git pull git@github.com:MartinX3-AndroidDevelopment/android_bootable_recovery.git MartinX3/omnirom/android-9.0
+popd
+
+######## SODP CHANGES ########
+pushd $ANDROOT/kernel/sony/msm-4.14/kernel/arch/arm64/configs/sony
+# Changes for TAMA (XZ2, XZ2C, XZ3)
+FILE='base_sdm845_defconfig'
+# Boot TWRP directly
+LINE='CONFIG_DEBUG_RENAME_SKIP_INITRAMFS_BOOTPARAM=y'
+grep -qF -- "$LINE" "$FILE" || echo "$LINE" >> "$FILE"
+# Force a PSTORE pressing VolUP+PWR for a shirt time. Helps debugging if no TWRP is available.
+LINE='CONFIG_QPNP_POWER_ON_PANIC_ON_KPDPWR_RESIN=y'
+grep -qF -- "$LINE" "$FILE" || echo "$LINE" >> "$FILE"
+# Compile the defconfig changes
+bash update_defconfig.sh
 popd
 
 # because "set -e" is used above, when we get to this point, we know
