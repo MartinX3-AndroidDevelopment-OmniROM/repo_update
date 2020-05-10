@@ -262,14 +262,6 @@ git fetch "https://gerrit.omnirom.org/android_build" refs/changes/20/33720/3 && 
 popd
 
 ######## TWRP CHANGES ########
-# Make it possible to overwrite  the security patch level and android version by the ones from system partition
-. build/envsetup.sh
-repopick -g https://gerrit.twrp.me -t sar-fixes
-pushd $ANDROOT/bootable/recovery
-# Missing in topic libresetprop
-git fetch "https://gerrit.twrp.me/android_bootable_recovery" refs/changes/23/1723/15 && git cherry-pick FETCH_HEAD
-popd
-repopick -g https://gerrit.twrp.me -t libresetprop
 # Adding personal commits which need to get upstreamed in TWRP-10.0
 pushd $ANDROOT/bootable/recovery
 git pull git@github.com:MartinX3-AndroidDevelopment/android_bootable_recovery.git MartinX3/omnirom/android-9.0
