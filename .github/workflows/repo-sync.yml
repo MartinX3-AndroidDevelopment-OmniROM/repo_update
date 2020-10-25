@@ -9,8 +9,8 @@ jobs:
     - name: Define variables
       run: |
         echo "upstream=sonyxperiadev/repo_update" >> $GITHUB_ENV
-        echo "rebase_base=android-9.0.0_r46" >> $GITHUB_ENV
-        echo "rebase_head=MartinX3/omnirom-9.0_twrp-10.0" >> $GITHUB_ENV
+        echo "rebase_base=android-10.0.0_r35" >> $GITHUB_ENV
+        echo "rebase_head=MartinX3/twrp-10" >> $GITHUB_ENV
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
